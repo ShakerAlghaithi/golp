@@ -33,6 +33,7 @@ group :development, :test do
 	gem 'pry-byebug'
 	gem 'meta_request'
 	gem 'better_errors'
+	gem 'capybara'
 end 
 
 # Use ActiveModel has_secure_password
