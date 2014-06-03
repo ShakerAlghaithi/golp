@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Golp</title>
+  <meta charset="utf-8">
+  <title>Starter Template for Bootstrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="This is my first App">
+  <meta name="author" content="Shaker Alghaithi">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js", "https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js" %>
+  <![endif]-->
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <div  id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Golp", "pages", :class => "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="pages/helloworld"><a href="/helloworld">Home</a></li>
+          <li class="/helloworld"><a href="/helloworld">Hello World</a></li>
+          <li><a href="/things">Things</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable" do %>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= msg %>
+      <% end %>
+    <% end %>
 </head>
+// <script type="text/javascript">
+// /**
+// * Add a filter to your project navigation
+// */
+// function addFilterActive(selector, remove_on_page, active_class) {
+//    if(typeof Cargo.Helper == "object") {
+//        var filter = Cargo.Helper.GetActiveFilter();
+//    } else {
+//        var filter = Cargo.Location.GetUserFilter();
+//    }
+
+//    var el_selector = (selector) ? $(selector) : $('.link_link');
+//        active_class = (active_class) ? active_class : "link_active";
+
+//    if( $('[href$="filter/'+filter+'"]',el_selector).parent() == selector) {
+//        $('[href$="filter/'+filter+'"]',el_selector).addClass(active_class);
+//    } else {
+//        $('[href$="filter/'+filter+'"]',el_selector).parent().addClass(active_class);
+//    }
+
+//    if(remove_on_page) {
+//        $(document).bind("projectLoadComplete", function() {
+//            $("."+active_class).removeClass(active_class);
+//        });
+//        $(document).bind("projectCloseComplete", function() {
+//            addFilterActive(selector, false);
+//        });
+//    }
+// }
+
+// $(function() {
+//    var selector = ".link_link";
+//    var remove_on_page = true;
+//    var active_class = "link_active";
+
+//    addFilterActive(selector, remove_on_page, active_class);
+// });
+// </script>
 <body>
 
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>

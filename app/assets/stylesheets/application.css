@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar {
+ 	background-color: #F6E6E6;
+ }
+ .link_active a {
+    background: #D9D919;
+}
+.view_tag info, .nav_container br, .filter {
+    display:none!important;
+}
