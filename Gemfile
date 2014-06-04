@@ -34,9 +34,12 @@ group :development, :test do
 	gem 'meta_request'
 	gem 'better_errors'
 	gem 'capybara'
+	gem 'factory_girl_rails'
+	gem 'forgery', '0.6.0'
 end 
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.1.1'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

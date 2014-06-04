@@ -1,28 +1,19 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version (4.1.1)
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+level 1:
+in this level I created the app, add the gems like : 
+better_errors: this gem replace the standard Rails error page with a much better and more usful error page . 
+quiet_assets: this gem turns off the rails asset pipeline log.
+rails panel: this will end the tailing of development log. have all information about the rail app requests in the developer tools panel.
+pry=byebug: to have fast execution control in pry. 
+level 2 : 
+in this level I added capybara gem which is realy good for testing. I deleted some js files that I don't need in this level and setup a test for the displaying helloworld in the front page
+level 3 : 
+In this level I added the bootstrap styling library to the app which is allowes me to add a navbar to the app. 
+level 4 : 
+I used Scaffold generator to get familier with all the files that scaffold generator creates. This generator is a magic tool that create all model , controller and views files at once . oh rspec files too.
+level 5 : 
+In this level I added valitions to check if the name and the description are not empty and have certain length. I used Rspec and FactoryGirl gem to test these validations.
+	put the validation at app/model/thing.rb
+	put the test at spec/model/thing_spec.rb 
+level 6 : 
+In this level I added some seeds to the app 
