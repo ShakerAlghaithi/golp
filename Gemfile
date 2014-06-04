@@ -39,6 +39,7 @@ group :development, :test do
 end 
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.1.1'
+gem 'devise'
 
 
 # Use ActiveModel has_secure_password

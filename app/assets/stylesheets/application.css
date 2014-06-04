@@ -23,3 +23,6 @@
 .view_tag info, .nav_container br, .filter {
     display:none!important;
 }
+#signin {
+	margin-left: 50px;
+}
