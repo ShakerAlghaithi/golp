@@ -15,7 +15,7 @@
  */
 
  .navbar {
- 	background-color: #F6E6E6;
+ 	background-color: #F8DFB6;
  }
  .link_active a {
     background: #D9D919;
@@ -25,4 +25,12 @@
 }
 #signin {
 	margin-left: 50px;
+}
+body {
+	background-size: cover;
+	background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSZO1GP6LujjE6juvnmgmblLrDr4DXtm2QVGYcKBgcZInDSg02-Dw');
+}
+#thinglist {
+	margin-left: 50px;
+	margin-right: 50px;
 }
