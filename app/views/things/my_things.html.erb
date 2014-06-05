@@ -1,5 +1,5 @@
 <div id="show">
-<h1>Listing things</h1>
+<h1>Listing of My Things</h1>
 
 <table class="table boarder">
   <thead>
@@ -12,26 +12,18 @@
 
   <tbody>
     <% @things.each do |thing| %>
-    <% if thing.user_id == current_user.id %>
       <tr>
         <td><%= thing.name %></td>
         <td><%= thing.description %></td>
         <td><%= link_to 'Show', thing %></td>
         <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
         <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-       </tr>
-   <% else %>
-      <tr>
-        <td><%= thing.name %></td>
-        <td><%= thing.description %></td>
-        <td><%= link_to 'Show', thing %></td>
       </tr>
-      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Thing', new_thing_path %>
+ <%= link_to 'New Thing', new_thing_path %>
 </div>

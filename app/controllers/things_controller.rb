@@ -1,12 +1,13 @@
 class ThingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_thing, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit, :destroy]
   
 
   # GET /things
   # GET /things.json
   def index
-    @things = current_user.things.all
+    @things = Thing.all
   end
 
   # GET /things/1
@@ -21,12 +22,14 @@ class ThingsController < ApplicationController
 
   # GET /things/1/edit
   def edit
+    
   end
 
   # POST /things
   # POST /things.json
   def create
      @thing = Thing.new(thing_params)
+     @thing.user_id = current_user.id 
 
 
     respond_to do |format|
@@ -57,11 +60,27 @@ class ThingsController < ApplicationController
   # DELETE /things/1
   # DELETE /things/1.json
   def destroy
-    @thing.destroy
-    respond_to do |format|
-      format.html { redirect_to things_url, notice: 'Thing was successfully destroyed.' }
-      format.json { head :no_content }
+    
+       @thing.destroy
+        respond_to do |format|
+          format.html { redirect_to things_url, notice: 'Thing was successfully destroyed.' }
+          format.json { head :no_content }
+        end
+    
+  end
+
+  def authorize
+    if @thing.user_id == current_user.id
+       flash[:notice] = "You successfully done it " 
+
+    else
+      flash[:notice] = "You Don't have permission to do this "
+      redirect_to things_path 
     end
+    
+  end
+  def my_things
+    @things = current_user.things.all
   end
 
   private
@@ -72,6 +91,6 @@ class ThingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thing_params
-      params.require(:thing).permit(:name, :description)
+      params.require(:thing).permit(:name, :description, :user_id)
     end
 end

@@ -1,6 +1,4 @@
-<div id="show">
-<h1>Listing things</h1>
-
+<% if thing.user_id == current_user.id %>
 <table class="table boarder">
   <thead>
     <tr>
@@ -32,6 +30,5 @@
 </table>
 
 <br>
-
-<%= link_to 'New Thing', new_thing_path %>
-</div>
+<% else %>
+<% end %>

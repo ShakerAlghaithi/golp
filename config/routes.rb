@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   root 'pages#helloworld'
   get '/helloworld', to: 'pages#helloworld'
+  get '/my_things', to: 'things#my_things'
 end
