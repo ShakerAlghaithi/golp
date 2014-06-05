@@ -25,7 +25,8 @@ class ThingsController < ApplicationController
   # POST /things
   # POST /things.json
   def create
-    @thing = Thing.new(thing_params)
+     @thing = Thing.new(thing_params)
+
 
     respond_to do |format|
       if @thing.save
