@@ -1,7 +1,6 @@
+<div id="show">
+<h1>Listing of My Things</h1>
 
-<div id ="thinglist">
-
-<h1>Listing things</h1>
 <table class="table boarder">
   <thead>
     <tr>
@@ -10,12 +9,15 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
-    
+      
     <%= render partial: "showthings", locals:{one_thing: @thing} %>
-   
+    
   </tbody>
 </table>
+
 <br>
+
 <%= link_to 'New Thing', new_thing_path %>
 </div>

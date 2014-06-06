@@ -1,0 +1,18 @@
+
+<% @things.each do |thing| %>
+<% if thing.user_id == current_user.id %>
+      <tr>
+        <td><%= thing.name %></td>
+        <td><%= thing.description %></td>
+        <td><%= link_to 'Show', thing %></td>
+        <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+        <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+   <% else %>
+      <tr>
+        <td><%= thing.name %></td>
+        <td><%= thing.description %></td>
+        <td><%= link_to 'Show', thing %></td>
+      </tr>
+ <% end %>
+ <% end %>

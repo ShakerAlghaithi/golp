@@ -16,4 +16,10 @@ In this level I added valitions to check if the name and the description are not
 	put the validation at app/model/thing.rb
 	put the test at spec/model/thing_spec.rb 
 level 6 : 
-In this level I added some seeds to the app 
+In this level I added some seeds to the app by using the forgery gem 
+level 7 : 
+In this level I used devise to get the authentication function, login logout and creating a user 
+level 8 :
+In this level I create associations between tables  user has many things and thing belongs to user.
+level 9 :
+
