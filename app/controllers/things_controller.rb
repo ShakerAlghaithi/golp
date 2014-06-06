@@ -30,6 +30,7 @@ class ThingsController < ApplicationController
   def create
      @thing = Thing.new(thing_params)
      @thing.user_id = current_user.id 
+     #@thing = current_user.things.new(thing_params) #we can use this syntax to make cleaner
 
 
     respond_to do |format|
@@ -70,13 +71,13 @@ class ThingsController < ApplicationController
   end
 
   def authorize
-    if @thing.user_id == current_user.id
-       flash[:notice] = "You successfully done it " 
+      if @thing.user_id == current_user.id
+         flash[:notice] = "You successfully done it " 
 
-    else
-      flash[:notice] = "You Don't have permission to do this "
-      redirect_to things_path 
-    end
+      else
+        flash[:notice] = "You Don't have permission to do this "
+        redirect_to things_path 
+      end
     
   end
   def my_things
