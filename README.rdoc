@@ -22,4 +22,4 @@ In this level I used devise to get the authentication function, login logout and
 level 8 :
 In this level I create associations between tables  user has many things and thing belongs to user.
 level 9 :
-
+In this level I added some authorizations that make the user cann't delete or edit only the things belong to him/her and I used partials to reduce the number of forms and prevent the using of same code in more than one place . 
