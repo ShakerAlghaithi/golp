@@ -7,7 +7,7 @@ class ThingsController < ApplicationController
   # GET /things
   # GET /things.json
   def index
-    @things = Thing.all
+    @things = Thing.all.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /things/1

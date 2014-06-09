@@ -40,6 +40,7 @@ end
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.1.1'
 gem 'devise'
+gem 'will_paginate', '~> 3.0'
 
 
 # Use ActiveModel has_secure_password
